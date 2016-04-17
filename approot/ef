@@ -8,4 +8,4 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-exec "dnx" --project "$DIR/src/KeepItSolved" --configuration Debug ef "$@"
+exec "$DIR/runtimes/dnx-coreclr-win-x64.1.0.0-rc1-final/bin/dnx" --project "$DIR/src/KeepItSolved" --configuration Debug ef "$@"
