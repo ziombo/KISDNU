@@ -13,7 +13,17 @@ namespace KeepItSolved.Models
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
+			//WHEN WORKING ON UBUNTU
 			optionsBuilder.UseSqlite("data source=/home/demo/test.db;");
+
+			//WHEN WORKING ON WINDOWS
+			/*
+			var connString = Startup.Configuration["Data:SolvedContextConnection"];
+
+			optionsBuilder.UseSqlServer(connString);
+
+			base.OnConfiguring(optionsBuilder);
+			*/
 		}
-    }
+	}
 }

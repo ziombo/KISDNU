@@ -100,5 +100,10 @@ namespace KeepItSolved.Controllers.Web
 			await _signInManager.SignOutAsync();
 			return RedirectToAction("Index", "App");
 		}
+
+		public IActionResult Demo()
+		{
+			return View();
+		}
     }
 }

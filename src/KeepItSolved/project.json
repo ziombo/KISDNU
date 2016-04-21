@@ -23,7 +23,7 @@
 		"Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
 		"Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
 		"Microsoft.NETCore.Platforms": "1.0.1-*",
-		"System.Net.Security": "4.0.0-beta-23405",
+		"System.Net.Security": "4.0.0-beta-23409",
 		"EntityFramework.Sqlite": "7.0.0-rc1-final"
 	},
 

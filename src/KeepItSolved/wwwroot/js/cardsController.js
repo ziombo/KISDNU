@@ -43,9 +43,10 @@
 					vm.errorMessage = "Failed to save new trip";
 				})
 				.finally(function () {
-					vm.isBusy = false;
+					//vm.isBusy = false;
 				})
 		};
+
 	}
 
 })();
