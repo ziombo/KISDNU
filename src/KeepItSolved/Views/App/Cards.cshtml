@@ -28,11 +28,11 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Add new card<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li>
-									<div style="width: 750px;" class="col-sm-12">
+									<div id="newCard" class="col-sm-12">
 										<form novalidate name="newCardForm" ng-submit="vm.addCard()">
 											<div class="form-group">
-												<label for="question">Add new card</label>
-												<span style="display:block" ng-show="newCardForm.question.$error.required">Question is required</span>
+												<label id="questionLabel" style="display:inline" for="question">Add new card</label>
+												<span style="display:block" class="text-danger" ng-show="newCardForm.question.$error.required">Question is required</span>
 												<input class="form-control" type="text" placeholder="Problem" id="question" name="question" ng-model="vm.newCard.question" required />
 												<textarea class="form-control" rows="3" type="text" placeholder="Solution" id="answer" name="answer" ng-model="vm.newCard.answer"></textarea>
 												<input class="form-control" type="text" placeholder="Category" id="category" name="category" ng-model="vm.newCard.category" />
@@ -58,7 +58,7 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-3" ng-repeat="card in vm.cards" style="margin-bottom: 10px;">
+				<div class="col-md-3 ng-cloak" ng-repeat="card in vm.cards" style="margin-bottom: 10px;">
 					<div class="panel panel-info">
 						<div class="panel-heading clearfix">
 							<h4 class="panel-title pull-left" >{{ card.question }}</h4>

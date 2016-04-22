@@ -9,16 +9,22 @@
 	<link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" />
 
+	<style>
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+			display: none !important;
+		}
+	</style>
+
 </head>
-<body style="background: #84969C; box-shadow: none;">
+<body style="background: #84969C;">
 
 
 	@RenderBody()
 
 
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/js/site.js"></script>
 	<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
 	@RenderSection("Scripts", false)
 </body>
 </html>
