@@ -76,12 +76,14 @@ namespace KeepItSolved
 			*/
 
 			//WHEN WORKING ON UBUNTU
-
+			
             services.AddEntityFramework()
                 .AddSqlite()
                 .AddDbContext<SolvedContext>();
+			
 
             services.AddScoped<ISolvedRepository, SolvedRepository>();
+			
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
