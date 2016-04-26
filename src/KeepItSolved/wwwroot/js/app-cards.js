@@ -3,5 +3,5 @@
 	"use strict";
 
 	//module creation
-	angular.module("app-cards", []);
+	angular.module("app-cards", ["wu.masonry"]);
 })();
