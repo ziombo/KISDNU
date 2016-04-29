@@ -8,5 +8,6 @@ namespace KeepItSolved.Models
 		void AddCard(Flashcard newCard);
 		bool SaveAll();
 		IEnumerable<Flashcard> GetUserFlashcards(string name);
+		void DeleteCard(Flashcard toDeleteCard);
 	}
 }

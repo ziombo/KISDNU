@@ -47,6 +47,24 @@
 				})
 		};
 
+		vm.deleteCard = function (card) {
+			$http.delete("/api/cards/" + card.id)
+				.then(function (response) {
+					//success
+					var arrayLen = vm.cards.length;
+					for (var i = 0; i < arrayLen; i++) {
+						if (vm.cards[i].id == card.id) {
+							vm.cards.splice(i, 1);
+							break;
+						}
+					}
+				}, function (error) {
+					vm.errorMessage = "Failed to save new trip";
+				})
+				.finally(function () {
+					//vm.isBusy = false;
+				})
+		};
 	}
 
 })();

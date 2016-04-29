@@ -41,5 +41,10 @@ namespace KeepItSolved.Models
 		{
 			return _context.SaveChanges() > 0;
 		}
+
+		public void DeleteCard(Flashcard toDeleteCard)
+		{
+			_context.Flashcards.Remove(toDeleteCard);
+		}
 	}
 }

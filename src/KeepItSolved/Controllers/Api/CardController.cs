@@ -11,8 +11,8 @@ namespace KeepItSolved.Controllers.Api
 {
 	[Authorize]
 	[Route("api/cards")]
-    public class CardController : Controller
-    {
+	public class CardController : Controller
+	{
 		private ISolvedRepository _repository;
 
 		public CardController(ISolvedRepository repository)
@@ -44,8 +44,8 @@ namespace KeepItSolved.Controllers.Api
 
 					if (_repository.SaveAll())
 					{
-					Response.StatusCode = (int)HttpStatusCode.Created;
-					return Json(Mapper.Map<FlashcardViewModel>(newCard));
+						Response.StatusCode = (int)HttpStatusCode.Created;
+						return Json(Mapper.Map<FlashcardViewModel>(newCard));
 					}
 				}
 			}
@@ -57,7 +57,31 @@ namespace KeepItSolved.Controllers.Api
 
 
 			Response.StatusCode = (int)HttpStatusCode.BadRequest;
-			return Json( new { Message = "Failed", ModelState = ModelState });
+			return Json(new { Message = "Failed", ModelState = ModelState });
+		}
+		[HttpDelete("{id:int}")]
+		public JsonResult Delete()
+		{
+			int id = Convert.ToInt32(RouteData.Values["id"]);
+			var toDel = new Flashcard() { Id = id, UserName = User.Identity.Name };
+			//var deleteCard = Mapper.Map<Flashcard>(vm);
+			//deleteCard.UserName = User.Identity.Name;
+			try
+			{
+				_repository.DeleteCard(toDel);
+				if (_repository.SaveAll())
+				{
+					Response.StatusCode = (int)HttpStatusCode.OK;
+					return Json(new { toDel });
+				}
+			}
+			catch(Exception ex)
+			{
+				Response.StatusCode = (int)HttpStatusCode.BadRequest;
+				return Json(new { Message = ex.Message });
+			}
+			Response.StatusCode = (int)HttpStatusCode.BadRequest;
+			return Json(new { Message = "Failed", ModelState = ModelState });
 		}
     }
 }
