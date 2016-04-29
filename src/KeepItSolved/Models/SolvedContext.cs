@@ -24,6 +24,7 @@ namespace KeepItSolved.Models
 
 			base.OnConfiguring(optionsBuilder);
 			*/
+
 		}
 	}
 }

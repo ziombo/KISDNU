@@ -67,7 +67,7 @@ namespace KeepItSolved
             })
             .AddEntityFrameworkStores<SolvedContext>();
 
-			
+
 			//WHEN WORKING ON WINDOWS 
 			/*
 			services.AddEntityFramework()
@@ -76,11 +76,12 @@ namespace KeepItSolved
 			*/
 
 			//WHEN WORKING ON UBUNTU
-			
+			/*
+
+			*/			
             services.AddEntityFramework()
                 .AddSqlite()
                 .AddDbContext<SolvedContext>();
-			
 
             services.AddScoped<ISolvedRepository, SolvedRepository>();
 			

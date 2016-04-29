@@ -57,9 +57,9 @@
 				<div class="col-md-3 ng-cloak masonry-brick" ng-repeat="card in vm.cards">
 					<div class="panel panel-info" style="min-width:235px;">
 						<div class="panel-heading clearfix">
-							<h4 class="panel-title pull-left">{{ card.question }}</h4>
+							<h4 class="panel-title pull-left">{{card.question }}</h4>
 							<div class="btn-group pull-right">
-								<a href="#" class="btn btn-sm btn-primary">Manage</a>
+								<button ng-click="vm.deleteCard(card.id)" class="btn btn-sm btn-primary">Delete</button>
 							</div>
 						</div>
 						<div class="panel-body" style="overflow-y: auto; max-height: 300px;">
