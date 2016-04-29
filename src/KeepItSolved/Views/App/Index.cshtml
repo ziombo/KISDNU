@@ -13,19 +13,22 @@
 			<div class="form-group">
 				<label asp-for="Login">Login</label>
 				<input asp-for="Login" class="form-control smaller-input" />
-				<b><span asp-validation-for="Login"></span></b>
+				<b><span asp-validation-for="Login" class="text-danger"></span></b>
 			</div>
 			<div class="form-group">
 				<label asp-for="Password">Password</label>
 				<input asp-for="Password" type="password" class="form-control smaller-input" />
-				<b><span asp-validation-for="Password"></span></b>
+				<b><span asp-validation-for="Password" class="text-danger"></span></b>
 			</div>
-			<input type="submit" class="btn btn-default" value="Login"/>
+			<div class="form-group">
+				<input type="submit" class="smaller-input btn btn-success" value="Login" />
+			</div>
+
 		</form>
-		<a asp-controller="App" asp-action="Register" class="text-primary"><b>Don't have an account yet? Register!</b></a>
+		<a asp-controller="App" asp-action="Register" class="text-primary"><b><ins>Don't have an account yet? Register!</ins></b></a>
 	</div>
 	<div class="col-md-7 col-sm-12 text-center">
-		<h2>Try out demo version without logging in</h2>
+		<h2><b>Try out demo version without logging in</b></h2>
 		<a asp-controller="App" asp-action="Demo"  id="btnLogin" class="btn btn-lg btn-success">Demo Preview</a>
 	</div>
 
