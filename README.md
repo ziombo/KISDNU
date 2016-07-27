@@ -4,6 +4,7 @@ KeepItSolved is a website that allows people to keep their problems and solution
 # Built With:
 1. C#
   * ASP.NET Core MVC 6
+  * ASP.NET Identity
   * Entity Framework 7
 2. HTML
 3. CSS
